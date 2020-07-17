@@ -8,23 +8,19 @@
 </head>
 <body>
     <div class='container'>
-        <div id='timer' class='time'>10:00</div>
+        <div id= 'startBtn'>Start Quiz</div>
+        <div id='timer' class='time'></div>
         <section>
             <div class= 'question-container'>
                 <div id='questions'></div>
             </div>
-            <div id= 'answers'>
-                <div id= 'correctBtn'>
-                    <button id='answerA'>A</button>
-                    <button id='answerB'>B</button>
-                    <button id='answerC'>C</button>
-                    <button id='answerD'>D</button>
-                </div>
-                <button id= 'startBtn'>Start Quiz</button>
+            <div>
+                <button id='answerA' class='buttons'>A</button>
+                <button id='answerB' class='buttons'>B</button>
+                <button id='answerC' class='buttons'>C</button>
+                <button id='answerD' class='buttons'>D</button>
             </div>
-            <div class= 'enter-score'>
-                <p>Nice Job! Insert your initials below to enter in your score</p>
-            </div>
+            <div id= 'enter-score'></div>
         </section>
     </div>
     <script src='script.js'></script>

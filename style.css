@@ -5,3 +5,21 @@
 #timer {
     float: right;
 }
+
+#enter-score {
+    display: none
+}
+
+#startBtn {
+    font-size: 40px;
+}
+
+.buttons {
+    color: chocolate;
+    background-color: cornsilk;
+    font: 1em sans-serif;
+    /* display: none; */
+}
+.question-container {
+    font-size: medium;
+}
