@@ -5,22 +5,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel='stylesheet' href='style.css'>
     <title>Javascript Quiz!</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
 </head>
 <body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="score.html">High Scores</a>
+        <div id='timer' class='time'>60</div>
+    </nav>
+    <h1>Javascript Quiz</h1>
     <div class='container'>
-        <div id= 'startBtn'>Start Quiz</div>
-        <div id='timer' class='time'></div>
+        <button id= 'startBtn'>Start Quiz</button>
         <section>
             <div class= 'question-container'>
                 <div id='questions'></div>
             </div>
             <div>
-                <button id='answerA' class='buttons'>A</button>
-                <button id='answerB' class='buttons'>B</button>
-                <button id='answerC' class='buttons'>C</button>
-                <button id='answerD' class='buttons'>D</button>
+                <button id='buttonA' class='buttons' onClick='showId(this.id)'>A</button>
+                <button id='buttonB' class='buttons' onClick='showId(this.id)'>B</button>
+                <button id='buttonC' class='buttons' onClick='showId(this.id)'>C</button>
+                <button id='buttonD' class='buttons' onClick='showId(this.id)'>D</button>
             </div>
-            <div id= 'enter-score'></div>
+            <div id='enter-score'></div>
         </section>
     </div>
     <script src='script.js'></script>

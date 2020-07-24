@@ -1,0 +1,70 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Verdana";
+  font-size: 1.2rem;
+}
+
+input {
+  height: 50px;
+  width: 100%;
+  padding: 10px;
+  margin-top: 15px;
+  font-size: 2em;
+  border: none;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+  background-color: white;
+}
+
+li {
+  height: 40px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  padding: 5px;
+  background-color: greenyellow;
+  color: black;
+  font-size: 1.2rem;
+  line-height: 1.2;
+}
+
+li:before {
+  content: "\200B";
+  position: absolute;
+}
+
+li::after {
+  content: " ";
+  display: block;
+  clear: both;
+}
+
+li button {
+  float: right;
+  border: none;
+  height: 1.4rem;
+  background-color: gray;
+  color: gold;
+  font-size: 1em;
+}
+
+li button:hover {
+  background-color: goldenrod;
+}
+
+.initials {
+  width: 90%;
+  margin: 0 auto;
+  margin-top: 40px;
+}
+
+#goBack {
+  font-size: 2rem;
+}

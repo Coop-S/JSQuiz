@@ -1,9 +1,20 @@
 * {
-    border: 0px
+    box-sizing: border-box;
+    background-color: rgb(4, 158, 158);
+    font-weight: bolder;
 }
 
 #timer {
     float: right;
+}
+
+h1 {
+    text-align: center;
+    background-color: greenyellow;
+}
+
+.time{
+    background-color: white;
 }
 
 #enter-score {
@@ -12,14 +23,23 @@
 
 #startBtn {
     font-size: 40px;
+    align-content: center;
+    background-color: magenta;
+}
+
+.container {
+    color: maroon;
+    margin-top: 0rem;
+    border-radius: 1rem;
 }
 
 .buttons {
     color: chocolate;
     background-color: cornsilk;
+    border-radius: 0.5rem;
     font: 1em sans-serif;
-    /* display: none; */
 }
+
 .question-container {
-    font-size: medium;
+    font-size: 1.8rem;
 }
