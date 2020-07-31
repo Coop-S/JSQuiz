@@ -2,8 +2,12 @@
     box-sizing: border-box;
     background-color: rgb(4, 158, 158);
     font-weight: bolder;
+    margin-bottom: 1em;
 }
 
+#blah {
+    background-color: indianred;
+}
 #timer {
     float: right;
 }
@@ -29,8 +33,9 @@ h1 {
 
 .container {
     color: maroon;
-    margin-top: 0rem;
+    text-align: center;
     border-radius: 1rem;
+    margin-bottom: 1rem;
 }
 
 .buttons {
@@ -38,6 +43,7 @@ h1 {
     background-color: cornsilk;
     border-radius: 0.5rem;
     font: 1em sans-serif;
+    visibility: hidden;
 }
 
 .question-container {

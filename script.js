@@ -10,6 +10,7 @@ const answerButtons = document.getElementsByClassName('buttons');
 let theQ = 0;
 var numberCorrect = 0;
 var countDown = 60;
+var startTimer = false;
 let myQuestion = [
     // questions with answers
     {
@@ -103,10 +104,12 @@ startButton.addEventListener('click', function(){
 
 function time(){
     var timer = setInterval(function(){
-        if (countDown < 0){
+        if (countDown <= 0){
             timerContainer.innerHTML = 'Quiz Over';
             clearInterval(timer);
+            endGame();
         } else {
+            startTimer = true;
             countDown--;
             timerContainer.textContent = countDown;
         }
@@ -124,55 +127,60 @@ function startGame(){
 }
 
 function showId (clicky) {
-    console.log(clicky)
     quizContainer.innerHTML= '';
     buttonA.innerHTML = '';
     buttonB.innerHTML = '';
     buttonC.innerHTML = '';
     buttonD.innerHTML = '';
-    checkAnswer(clicky);
-    theQ++;
-    console.log(theQ);
-    loadQuestion();
+    try {
+        checkAnswer(clicky);
+        theQ++;
+        loadQuestion();
+    } catch(error) {
+        startTimer = false;
+        clearInterval(countDown);
+    }
 }
 
 function loadQuestion() {
+    buttonA.style.visibility = 'visible';
+    buttonB.style.visibility = 'visible';
+    buttonC.style.visibility = 'visible';
+    buttonD.style.visibility = 'visible';
     for(i = 0; i < myQuestion.length; i++) {
-    let q = myQuestion[theQ];
+        try {
+            let q = myQuestion[theQ];
     quizContainer.innerHTML = '<p>' + q.question + '</p>';
     buttonA.innerHTML = q.buttonA;
     buttonB.innerHTML = q.buttonB;
     buttonC.innerHTML = q.buttonC;
     buttonD.innerHTML = q.buttonD;
+        } catch(error){
+            question = null;
+            endGame();
+        }
+    
     }
 } 
 
 function checkAnswer(guess) {
     if (myQuestion[theQ].correctAnswer === guess){
         numberCorrect++;
-        console.log(numberCorrect)
-        // correct();
     } else{
-       timerContainer.textContent = countDown - 10;
-        // incorrect();
-    }
-    if (theQ <= lastQ){
+        countDown -= 10;
+       timerContainer.textContent = countDown;
+    } if (theQ <= lastQ){
         loadQuestion;
-    }else {
+    } else{
         clearInterval(timerContainer);
-        alert('Quiz Over')
+        alert('Quiz Over');
     }
 }
 
+// store numberCorrect and time remaining
 
 function endGame() {
     // move to score.html to enter in score
-    location.replace('score.html');
+    window.location.replace('score.html');
+    localStorage.setItem('score', numberCorrect);
 }
-// function correct(){
-//     answerButtons.style.backgroundColor = '0f0';
-// }
-
-// function incorrect() {
-//     answerButtons.style.backgroundColor = 'f00';
-// }
